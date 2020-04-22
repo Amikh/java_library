@@ -119,9 +119,18 @@ public class LibraryTest {
      * The test - print repair number in array
      */
     @Test
-    public void printRepeatingNumberTest(){
+    public void isPrintRepeatingNumberTest(){
         int [] arr= {1,2,3,4,4,5,6,7,7,8,9};
         int size = arr.length;
-        lb.printRepeatingNumber(arr,size);
+        lb.isPrintRepeatingNumber(arr,size);
+    }
+    /**
+     * The test - print new array without repair number in array
+     */
+    @Test
+    public void isPrintArrayWithOutRepeatingNumberTest() {
+        int[] arr = {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
+        int size = arr.length;
+        lb.isPrintArrayWithOutRepeatingNumber(arr,size);
     }
 }

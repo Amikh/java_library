@@ -7,9 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class Library {
@@ -109,10 +107,12 @@ public class Library {
 
     /**
      * The method for print repeat number from array
-     * param arr
-     * param size
+     * Example
+     * input : param arr - {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
+     * input : param size
+     * output: 4 , 7
      */
-    public void printRepeatingNumber(int[] arr, int size){
+    public void isPrintRepeatingNumber(int[] arr, int size){
         int i, j;
         for (i = 0; i < size; i++)  {
             for (j = i + 1; j < size; j++){
@@ -122,6 +122,31 @@ public class Library {
                 }
             }
         }
+    }
+    /**
+     * The method for print new array without a repeating number
+     * Example
+     * input : param arr - {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
+     * input : param size
+     * output: {1, 2, 3, 4, 5, 6, 7, 8, 9}
+     */
+    public void isPrintArrayWithOutRepeatingNumber(int[] arr, int size){
+        int i, j;
+        boolean index = false;
+        List<Integer> list = new ArrayList<>();
+        for (i = 0; i < size; i++)  {
+            for (j = i + 1; j < size; j++){
+                if (arr[i] == arr[j]) {
+                    index = true;
+                }
+            }
+            int number = arr[i];
+            if(!index){
+                list.add(number);
+            }
+            index = false;
+        }
+        System.out.println(Arrays.asList(list));
     }
 
    }
