@@ -100,14 +100,30 @@ public class Library {
      * param map
      */
     public void isPrintMap (Map<Integer, String> map) {
-        Integer key;
-        String value;
-        for (Map.Entry<Integer, String> entery : map.entrySet()) {
-            key = entery.getKey();
-            value = entery.getValue();
-            System.out.println("Key: " + key + "   " + "Value: " + value);
+        for (Map.Entry<Integer, String> en : map.entrySet()) {
+             Integer key = en.getKey();
+             String value = en.getValue();
+             System.out.println("Key: " + key + "   " + "Value: " + value);
         }
     }
+
+    /**
+     * The method for print repeat number from array
+     * param arr
+     * param size
+     */
+    public void printRepeatingNumber(int[] arr, int size){
+        int i, j;
+        for (i = 0; i < size; i++)  {
+            for (j = i + 1; j < size; j++){
+                if (arr[i] == arr[j]) {
+                    int number = arr[i];
+                    System.out.print(number +" ");
+                }
+            }
+        }
+    }
+
    }
 
 

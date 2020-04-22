@@ -2,7 +2,6 @@ package com.test;
 
 import com.Library;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -27,11 +26,11 @@ public class LibraryTest {
      * The test is check current date
      * for running this test - need to write an expected date
      */
-    @Ignore
+
     @Test
      public void isCurrentDateTest(){
        String actual = lb.isCurrentDate();
-       String expected = "10.10.10";
+       String expected = "22.04.20";
        Assert.assertEquals(expected,actual);
      }
 
@@ -102,7 +101,9 @@ public class LibraryTest {
         String path = System.getProperty(PATH_DIR);
         lb.isCreateFile(path+"/file.txt","Ho ho ho !!!");
     }
-
+    /**
+     * The test - print from map
+     */
     @Test
     public void isPrintMapTest(){
         Map<Integer, String> map = new HashMap<>();
@@ -112,5 +113,15 @@ public class LibraryTest {
         map.put(4,"Go");
         map.put(5,"JavaScript");
         lb.isPrintMap(map);
+    }
+
+    /**
+     * The test - print repair number in array
+     */
+    @Test
+    public void printRepeatingNumberTest(){
+        int [] arr= {1,2,3,4,4,5,6,7,7,8,9};
+        int size = arr.length;
+        lb.printRepeatingNumber(arr,size);
     }
 }
