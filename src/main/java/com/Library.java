@@ -112,8 +112,9 @@ public class Library {
      * input : param size
      * output: 4 , 7
      */
-    public void isPrintRepeatingNumber(int[] arr, int size){
+    public void isPrintRepeatingNumber(int[] arr){
         int i, j;
+        int size = arr.length;
         for (i = 0; i < size; i++)  {
             for (j = i + 1; j < size; j++){
                 if (arr[i] == arr[j]) {
@@ -130,8 +131,9 @@ public class Library {
      * input : param size
      * output: {1, 2, 3, 4, 5, 6, 7, 8, 9}
      */
-    public void isPrintArrayWithOutRepeatingNumber(int[] arr, int size){
+    public void isPrintArrayWithOutRepeatingNumber(int[] arr){
         int i, j;
+        int size = arr.length;
         boolean index = false;
         List<Integer> list = new ArrayList<>();
         for (i = 0; i < size; i++)  {
@@ -146,7 +148,52 @@ public class Library {
             }
             index = false;
         }
-        System.out.println(Arrays.asList(list));
+        System.out.println(Collections.singletonList(list));
+    }
+    /**
+     * The method for print new array
+     * Where delete all repeating number
+     * Example
+     * input : param arr - {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
+     * 4 and 7 - the repeating number - delete form array
+     * output: {1, 2, 3, 5, 6, 8, 9}
+     */
+    public void isDeleteRepeatingValueFromArray(int[] arr){
+        int size = arr.length; //get size array
+        int i, j;
+        boolean index = false;
+
+        List<Integer> list = new ArrayList<>();
+        List<Integer> list1 = new ArrayList<>();
+
+        for (i = 0; i < size; i++) {
+            for (j = i + 1; j < size; j++) {
+                if (arr[i] == arr[j]) {
+                    int number = arr[i];
+                    list1.add(number);
+                    index = true;
+                }
+            }
+            int number = arr[i];
+            if (!index) {
+                list.add(number);
+            }
+            index = false;
+        }
+
+        System.out.println("before");
+        System.out.println(Collections.singletonList(list));
+        isDeleteValueFromArray(list,list1);
+        System.out.println("Modified ArrayList"+Collections.singletonList(list));
+    }
+    public static void isDeleteValueFromArray(List<Integer> list,List<Integer> list1){
+        for (int num : list1)
+            for (int j = 0; j < list.size(); j++) {
+                int n = list.get(j);
+                if (n == num) {
+                    list.remove(j);
+                }
+            }
     }
 
    }

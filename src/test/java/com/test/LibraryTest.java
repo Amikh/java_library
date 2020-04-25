@@ -30,7 +30,7 @@ public class LibraryTest {
     @Test
      public void isCurrentDateTest(){
        String actual = lb.isCurrentDate();
-       String expected = "22.04.20";
+       String expected = "25.04.20";
        Assert.assertEquals(expected,actual);
      }
 
@@ -121,8 +121,7 @@ public class LibraryTest {
     @Test
     public void isPrintRepeatingNumberTest(){
         int [] arr= {1,2,3,4,4,5,6,7,7,8,9};
-        int size = arr.length;
-        lb.isPrintRepeatingNumber(arr,size);
+        lb.isPrintRepeatingNumber(arr);
     }
     /**
      * The test - print new array without repair number in array
@@ -130,7 +129,15 @@ public class LibraryTest {
     @Test
     public void isPrintArrayWithOutRepeatingNumberTest() {
         int[] arr = {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
-        int size = arr.length;
-        lb.isPrintArrayWithOutRepeatingNumber(arr,size);
+        lb.isPrintArrayWithOutRepeatingNumber(arr);
     }
+    /**
+     * The test - print new array without repair number in array
+     */
+    @Test
+    public void isDeleteRepeatingValueFromArrayTest() {
+        int[] arr = {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
+        lb.isDeleteRepeatingValueFromArray(arr);
+    }
+
 }
