@@ -2,6 +2,7 @@ package com.test;
 
 import com.Library;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class LibraryTest {
      * The test is check current date
      * for running this test - need to write an expected date
      */
-
+    @Ignore
     @Test
      public void isCurrentDateTest(){
        String actual = lb.isCurrentDate();

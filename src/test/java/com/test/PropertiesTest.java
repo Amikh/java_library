@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.Constants.PATH_DIR;
 
 public class PropertiesTest {
     PropertyValues pv = new PropertyValues();
