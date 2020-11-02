@@ -1,5 +1,7 @@
 package com;
 
+import org.apache.log4j.Logger;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,7 +13,7 @@ import static com.Constants.CONFIG_PROPERTIES;
  * in this example - print two parameters : user and password
  */
 public class PropertyValues {
-
+    private static final Logger log = Logger.getLogger(PropertyValues.class);
 
     InputStream inputStream;
     public void  getPropValues() throws IOException {
@@ -22,16 +24,17 @@ public class PropertyValues {
             if (inputStream != null) {
                 prop.load(inputStream);
             } else {
+                log.error("property file '" + CONFIG_PROPERTIES + "' not found in the classpath");
                 throw new FileNotFoundException("property file '" + CONFIG_PROPERTIES + "' not found in the classpath");
             }
 
           // get the property value and print it out
            String user = prop.getProperty("user");
            String pass = prop.getProperty("pass");
-           System.out.println("User : "+user + " Password : "+pass);
+           log.info("User : "+user + " Password : "+pass);
 
         } catch (Exception e) {
-            System.out.println("Exception: " + e);
+           log.error("Exception: " + e);
         } finally {
             assert inputStream != null;
             inputStream.close();

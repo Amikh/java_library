@@ -1,4 +1,6 @@
 package com;
+import org.apache.log4j.Logger;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,6 +11,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Library {
+    private static final Logger log = Logger.getLogger(Library.class);
     /**
      * The method for read list a files from any directory
      * using the .walk() method, passing a Paths argument
@@ -99,7 +102,7 @@ public class Library {
         for (Map.Entry<Integer, String> en : map.entrySet()) {
              Integer key = en.getKey();
              String value = en.getValue();
-             System.out.println("Key: " + key + "   " + "Value: " + value);
+             log.info("Key: " + key + "   " + "Value: " + value);
         }
     }
 
@@ -146,7 +149,7 @@ public class Library {
             }
             index = false;
         }
-        System.out.println(Collections.singletonList(list));
+        log.info(Collections.singletonList(list));
     }
     /**
      * The method for print new array
@@ -179,10 +182,10 @@ public class Library {
             index = false;
         }
 
-        System.out.println("before");
-        System.out.println(Collections.singletonList(list));
+        log.info("before");
+        log.info(Collections.singletonList(list));
         isDeleteValueFromArray(list,list1);
-        System.out.println("Modified ArrayList"+Collections.singletonList(list));
+        log.info("Modified ArrayList"+Collections.singletonList(list));
     }
     public static void isDeleteValueFromArray(List<Integer> list,List<Integer> list1){
         for (int num : list1)
