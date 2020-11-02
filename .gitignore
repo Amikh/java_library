@@ -43,8 +43,10 @@ out/
 *.iml
 *.ipr
 *.iws
+*.log
 config.properties
 target/
+log/
 
 ##############################
 ## Eclipse
