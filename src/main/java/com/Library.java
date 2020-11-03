@@ -120,7 +120,7 @@ public class Library {
             for (j = i + 1; j < size; j++){
                 if (arr[i] == arr[j]) {
                     int number = arr[i];
-                    System.out.print(number +" ");
+                    log.info(number +" ");
                 }
             }
         }

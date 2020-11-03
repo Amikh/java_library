@@ -31,7 +31,7 @@ public class LibraryTest {
     @Test
      public void isCurrentDateTest(){
        String actual = lb.isCurrentDate();
-       String expected = "25.04.20";
+       String expected = "";
        Assert.assertEquals(expected,actual);
      }
 
