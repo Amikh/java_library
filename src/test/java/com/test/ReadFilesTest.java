@@ -20,13 +20,13 @@ public class ReadFilesTest {
      * The test for print text out from file
      * throws IOException
      */
-    @Ignore
-    @Test
-    public void isReadStringFromFileTest() throws IOException {
-
-        String txt = ut.isGetPathToFile(Constants.JSON_FILE_TEST);
-        rf.isReadStringFromFile(txt);
-    }
+//    @Ignore
+//    @Test
+//    public void isReadStringFromFileTest() throws IOException {
+//
+//        String txt = ut.isGetPathToFile(Constants.JSON_FILE_TEST);
+//        rf.isReadStringFromFile(txt);
+//    }
 
     /**
      * The test check reading text from file

@@ -1,0 +1,83 @@
+package com;
+
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.JsonPath;
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.isTest();
+
+    }
+
+
+       public  void isTest(){
+           String pathFile = isGetPathToFile("out.json");
+           String result = isReadStringFromFile(pathFile);
+           Object document = Configuration.defaultConfiguration().jsonProvider().parse(result);
+
+
+//           String PolarisOutputVersion = JsonPath.read(document, "$.PolarisOutputVersion");
+//           List<String> Results = JsonPath.read(document, "$.Results");
+//           List<String> allNS = JsonPath.read(document, "$.Results[*].Namespace");
+//           List<String> PodResult = JsonPath.read(document, "$.Results[*].PodResult");
+//           HashMap  res =  JsonPath.read(document, "$.Results[1].PodResult");
+//           String  res =  JsonPath.read(document, "$.Results[1].PodResult.Results.hostIPCSet.Message");
+//           List<String>  res =  JsonPath.read(document, "$.Results[0].PodResult.ContainerResults");
+//           List<String>  res =  JsonPath.read(document, "$.Results[0].PodResult.ContainerResults..Results.cpuLimitsMissing");
+             List<String>  res =  JsonPath.read(document, "$.Results[0].PodResult.ContainerResults..Results.cpuLimitsMissing");
+
+
+
+           System.out.println("result : "+ res.toString());
+
+       }
+
+
+
+
+    public String  isGetPathToFile(String fileName) {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
+        return file.getAbsolutePath();
+    }
+
+
+    public String  isReadStringFromFile(String pathFile) {
+        InputStream is = null;
+        try {
+            is = new FileInputStream(pathFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        assert is != null;
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line = null;
+        try {
+            line = br.readLine();
+        } catch (IOException exception) {
+
+            exception.printStackTrace();
+        }
+        StringBuilder sb = new StringBuilder();
+
+        while(line != null){
+            sb.append(line).append("\n");
+            try {
+                line = br.readLine();
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+        }
+
+        return sb.toString();
+    }
+}
