@@ -26,13 +26,13 @@ public class LibraryTest {
      * The test is check current date
      * for running this test - need to write an expected date
      */
-    @Ignore
-    @Test
-     public void isCurrentDateTest(){
-       String actual = lb.isCurrentDate();
-       String expected = "";
-       Assert.assertEquals(expected,actual);
-     }
+//    @Ignore
+//    @Test
+//     public void isCurrentDateTest(){
+//       String actual = lb.isCurrentDate();
+//       String expected = "";
+//       Assert.assertEquals(expected,actual);
+//     }
 
     /**
      * The test - check convert a format stamp date

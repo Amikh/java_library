@@ -32,11 +32,12 @@ public class ReadFilesTest {
      * The test check reading text from file
      * it's only print text.
      */
-    @Test
-    public void isReadTextFromFileTest(){
-        String pathFile = ut.isGetPathToFile(Constants.JSON_FILE_TEST);
-        ut.isReadTextFromFile(pathFile);
-    }
+
+//    @Test
+//    public void isReadTextFromFileTest(){
+//        String pathFile = ut.isGetPathToFile(Constants.JSON_FILE_TEST);
+//        ut.isReadTextFromFile(pathFile);
+//    }
 
 
     /**
@@ -44,14 +45,15 @@ public class ReadFilesTest {
      * https://github.com/json-path/JsonPath
      * throws IOException
      */
-    @Test
-    public void isJsonPathTest() throws IOException {
-        String pathFile = ut.isGetPathToFile(Constants.JSON_FILE_TEST);
-        String result = rf.isReadStringFromFile(pathFile);
-        Object document = Configuration.defaultConfiguration().jsonProvider().parse(result);
-        String author = JsonPath.read(document, "$.store.book[3].author");
-        log.info("author: "+author);
-    }
+
+//    @Test
+//    public void isJsonPathTest() throws IOException {
+//        String pathFile = ut.isGetPathToFile(Constants.JSON_FILE_TEST);
+//        String result = rf.isReadStringFromFile(pathFile);
+//        Object document = Configuration.defaultConfiguration().jsonProvider().parse(result);
+//        String author = JsonPath.read(document, "$.store.book[3].author");
+//        log.info("author: "+author);
+//    }
 
 
 
