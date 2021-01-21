@@ -1,5 +1,6 @@
 package com.test;
 
+import com.GeneratorJson;
 import com.PropertyValues;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -9,6 +10,7 @@ import java.io.IOException;
 
 public class PropertiesTest {
     PropertyValues pv = new PropertyValues();
+    GeneratorJson jj = new GeneratorJson();
 
     /**
      * The test for check data in the properties file
@@ -20,5 +22,9 @@ public class PropertiesTest {
         pv.getPropValues();
     }
 
+    @Test
+    public void isTestisCreateJSON(){
+        jj.isCreateJSON();
+    }
 
 }
