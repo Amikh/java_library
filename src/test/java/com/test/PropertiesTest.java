@@ -15,10 +15,10 @@ public class PropertiesTest {
      * throws IOException
      */
 
-//    @Test
-//    public void isPropValuesTest() throws IOException {
-//        pv.getPropValues();
-//    }
+    @Test
+    public void isPropValuesTest() throws IOException {
+        pv.getPropValues();
+    }
 
 
 }
