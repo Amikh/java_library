@@ -1,4 +1,5 @@
 package com;
+import lombok.extern.log4j.Log4j;
 import org.apache.log4j.Logger;
 
 import java.io.*;
@@ -10,8 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Stream;
 
+@Log4j
 public class Library {
-    private static final Logger log = Logger.getLogger(Library.class);
     /**
      * The method for read list a files from any directory
      * using the .walk() method, passing a Paths argument
