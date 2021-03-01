@@ -1,16 +1,14 @@
 package com.test;
-
 import com.Library;
+import lombok.extern.log4j.Log4j;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
-
 import static com.Constants.PATH_DIR;
-
+@Log4j
 public class LibraryTest {
      Library lb= new Library();
     /**
@@ -26,14 +24,13 @@ public class LibraryTest {
      * The test is check current date
      * for running this test - need to write an expected date
      */
-//    @Ignore
-//    @Test
-//     public void isCurrentDateTest(){
-//       String actual = lb.isCurrentDate();
+    @Test
+     public void isCurrentDateTest(){
+       String actual = lb.isCurrentDate();
+       log.info(actual);
 //       String expected = "";
 //       Assert.assertEquals(expected,actual);
-//     }
-
+     }
     /**
      * The test - check convert a format stamp date
      * throws ParseException
@@ -47,7 +44,6 @@ public class LibraryTest {
        String expected = "Oct 10, 2000 12:00:00 AM";
        Assert.assertEquals(actual,expected);
      }
-
     /**
      * The test - check method random number
      */
@@ -114,7 +110,6 @@ public class LibraryTest {
         map.put(5,"JavaScript");
         lb.isPrintMap(map);
     }
-
     /**
      * The test - print repair number in array
      */
@@ -139,5 +134,4 @@ public class LibraryTest {
         int[] arr = {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
         lb.isDeleteRepeatingValueFromArray(arr);
     }
-
 }

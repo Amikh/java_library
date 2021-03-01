@@ -1,15 +1,13 @@
 package com;
-
-import org.apache.log4j.Logger;
+import lombok.extern.log4j.Log4j;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.stream.Stream;
-
+@Log4j
 public class Utils {
-    private static final Logger log = Logger.getLogger(Utils.class);
     /**
      * The method return file path to file
      * param fileName
@@ -20,7 +18,6 @@ public class Utils {
             File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
         return file.getAbsolutePath();
     }
-
     /**
      * The method for reading text from file
      * param fileName
@@ -32,8 +29,5 @@ public class Utils {
             log.error(e.getMessage());
             e.printStackTrace();
         }
-
     }
-
-
 }
