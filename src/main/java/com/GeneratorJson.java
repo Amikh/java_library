@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.json.Json;
 import javax.json.stream.JsonGenerator;
-
 import lombok.extern.log4j.Log4j;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -13,21 +12,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 @Log4j
 public class GeneratorJson {
-
-
-    public static void main(String[] args) {
-        GeneratorJson gj = new GeneratorJson();
-        gj.isCreateJSON();
-    }
-
   public void isCreateJSON(){
         FileWriter writer = null;
         JSONParser parser = new JSONParser();
         Object simpleObj = null;
-
         try {
             String p = "C:/TEMP/";
             isCheckIfFolderPresent(p);
@@ -35,7 +25,6 @@ public class GeneratorJson {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         // JsonGenerator to create JSONObject and store it to file location mentioned above
         JsonGenerator generator = Json.createGenerator(writer);
         generator
@@ -83,7 +72,6 @@ public class GeneratorJson {
               f.mkdirs();
          }
      }
-
 }
 
 
