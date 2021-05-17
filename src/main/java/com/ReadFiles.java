@@ -1,13 +1,8 @@
 package com;
-
-
-import org.apache.log4j.Logger;
-
+import lombok.extern.log4j.Log4j;
 import java.io.*;
-
+@Log4j
 public class ReadFiles {
-    private static final Logger log = Logger.getLogger(ReadFiles.class);
-
     /**
      * The method for print text from a file
      *  pathFile - Path location a file
@@ -42,6 +37,4 @@ public class ReadFiles {
             log.info("reading text from file is ok");
         return sb.toString();
         }
-
-
 }
