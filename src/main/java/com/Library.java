@@ -231,7 +231,7 @@ public class Library {
            String indexTest = "31/12/2021";
            //Number all days in this year 365 or 366
            int daysInYear = Year.of(LocalDate.now().getYear()).length();
-           System.out.println(daysInYear);
+           log.info(daysInYear);
            //What is number day is today
            int numberLeftDay = LocalDate.now().getDayOfYear();
            return daysInYear-numberLeftDay;
