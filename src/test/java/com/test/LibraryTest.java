@@ -140,4 +140,11 @@ public class LibraryTest {
         lb.isDeleteRepeatingValueFromArray(arr);
     }
 
+    @Test
+    public void isDifferenceNumberDaysTest()throws ParseException{
+        int actual = lb.isDifferenceNumberDays("31/12/2021","dd/MM/yyyy");
+        int expected = lb.isExpectedNumber();
+        Assert.assertEquals(actual,expected);
+    }
+
 }

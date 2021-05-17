@@ -7,7 +7,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Year;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Library {
@@ -197,9 +201,43 @@ public class Library {
             }
     }
 
+    /**
+     *
+     * param index
+     * param inputFormat
+     * return
+     * throws ParseException
+     * Function return difference number of days, between today and any day for your chose
+     */
+    public int isDifferenceNumberDays(String index,String inputFormat)  throws ParseException{
 
+        int day=Integer.parseInt(isStampConvert(inputFormat,index,"dd"));
+        int month=Integer.parseInt(isStampConvert(inputFormat,index,"MM"));
+        int year=Integer.parseInt(isStampConvert(inputFormat,index,"yyyy"));
 
-   }
+        LocalDate startDate = LocalDate.now();
+        LocalDate endDate = LocalDate.of(year,month,day);
+        long numOfDays = ChronoUnit.DAYS.between(startDate, endDate);
+        List<LocalDate> listOfDates = Stream.iterate(startDate, date -> date.plusDays(1))
+                .limit(numOfDays)
+                .collect(Collectors.toList());
+
+        log.info("The number days "+listOfDates.size());
+        return listOfDates.size();
+      }
+
+       //function only for test if difference number day to end 2021 year
+       public int isExpectedNumber(){
+           String indexTest = "31/12/2021";
+           //Number all days in this year 365 or 366
+           int daysInYear = Year.of(LocalDate.now().getYear()).length();
+           System.out.println(daysInYear);
+           //What is number day is today
+           int numberLeftDay = LocalDate.now().getDayOfYear();
+           return daysInYear-numberLeftDay;
+       }
+
+}
 
 
 
