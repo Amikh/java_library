@@ -134,7 +134,7 @@ public class LibraryTest {
         int[] arr = {1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9};
         lb.isDeleteRepeatingValueFromArray(arr);
     }
-<<<<<<< HEAD
+
 
     @Test
     public void isDifferenceNumberDaysTest()throws ParseException{
@@ -143,6 +143,5 @@ public class LibraryTest {
         Assert.assertEquals(actual,expected);
     }
 
-=======
->>>>>>> 92c568361a6556ec15a1642cc86b65b12f895466
+
 }
