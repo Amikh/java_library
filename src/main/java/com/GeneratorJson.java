@@ -5,11 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.json.Json;
 import javax.json.stream.JsonGenerator;
-<<<<<<< HEAD
-import org.apache.log4j.Logger;
-=======
 import lombok.extern.log4j.Log4j;
->>>>>>> 92c568361a6556ec15a1642cc86b65b12f895466
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import com.google.gson.Gson;
